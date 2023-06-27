@@ -33,6 +33,7 @@ const Home = () => {
 	return (
 		<div className="text-center">
 			{todos.map(item => <p>{item.label}</p>)}
+
 		</div>
 	);
 };
