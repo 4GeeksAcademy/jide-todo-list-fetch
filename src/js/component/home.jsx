@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
 const Home = () => {
+
+	const [todos, setTodos] = useState();
+
+	useEffect(() => {
+
+		fetch('https://assets.breatheco.de/apis/fake/todos/user/jide', {
+			method: "GET",
+			body: JSON.stringify(todos),
+			headers: {      
+				"Content-Type": "application/json"
+			}
+		})
+		.then(resp => {
+		   return resp.json();
+	   	})
+	   	.then(data => {
+		   setTodos(data);
+		})
+	    .catch(error => {
+			console.log(error);
+		});
+	}, []);
+
+	if(!todos) {
+		return <p>Loading todos...</p>;
+	}
+	console.log(todos);
+	
 	return (
 		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			{todos.map(item => <p>{item.label}</p>)}
 		</div>
 	);
 };
