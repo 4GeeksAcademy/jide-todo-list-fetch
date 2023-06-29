@@ -22,6 +22,7 @@ ul li {
     list-style: none;
     padding: 5px; 
     border-radius: 2px;
+    color: lightblue;
 }
 
 input {
@@ -37,4 +38,8 @@ li i {
  .tasks {
     margin: auto;
     width: 50%;
- }
+}
+
+.tasks {
+    color: lightblue;
+}
