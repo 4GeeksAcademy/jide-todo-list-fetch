@@ -5,6 +5,25 @@ const Home = () => {
 
 	const [todos, setTodos] = useState();
 
+	const updateTodos = () => {
+		fetch('https://assets.breatheco.de/apis/fake/todos/user/jide', {
+			method: "PUT",
+			body: JSON.stringify(todos),
+			headers: {      
+				"Content-Type": "application/json"
+			}
+		})
+		.then(resp => {
+			return resp.json();
+			})
+			.then(data => {
+			setTodos(data);
+		})
+		.catch(error => {
+			console.log(error);
+		});
+	}
+
 	useEffect(() => {
 		fetch('https://assets.breatheco.de/apis/fake/todos/user/jide', {
 			method: "GET",
