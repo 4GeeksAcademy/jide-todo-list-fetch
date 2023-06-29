@@ -32,12 +32,13 @@ const Home = () => {
 	
 	return (
 		<div className="container">
-			<h1><i><strong>My Todos<i class="fa-solid fa-pencil"></i> </strong></i></h1>
+			<h1><i><strong>My Todos<i className="fa-solid fa-pencil"></i></strong></i></h1>
 			<ul>
-				<li>{todos.map(item => <p>{item.label}</p>)}</li>
+				<li>
+					{todos.map(item => <p>{item.label} <i className="fa-solid fa-trash-can"></i></p>)}
+				</li>
 			</ul>
-			
-
+			<div className="tasks"><p>{todos.length} tasks remaining</p></div>
 		</div>
 	);
 };
