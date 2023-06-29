@@ -38,7 +38,7 @@ const Home = () => {
 					{todos.map(item => <p>{item.label} <i className="fa-solid fa-trash-can"></i></p>)}
 				</li>
 			</ul>
-			<div className="tasks"><p>{todos.length} tasks remaining</p></div>
+			<div className="tasks"><p><i>{todos.length} tasks remaining</i></p></div>
 		</div>
 	);
 };
