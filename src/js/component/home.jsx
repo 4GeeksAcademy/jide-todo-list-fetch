@@ -6,7 +6,6 @@ const Home = () => {
 	const [todos, setTodos] = useState();
 
 	useEffect(() => {
-
 		fetch('https://assets.breatheco.de/apis/fake/todos/user/jide', {
 			method: "GET",
 			body: JSON.stringify(todos),
@@ -39,6 +38,9 @@ const Home = () => {
 				</li>
 			</ul>
 			<div className="tasks"><p><i>{todos.length} tasks remaining</i></p></div>
+			<div>
+				<button onClick={updateTodos}>Update Todos</button>
+			</div>
 		</div>
 	);
 };
