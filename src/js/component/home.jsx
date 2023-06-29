@@ -32,7 +32,7 @@ const Home = () => {
 	
 	return (
 		<div className="container">
-			<h1><i><strong>My Todos </strong></i></h1>
+			<h1><i><strong>My Todos<i class="fa-solid fa-pencil"></i> </strong></i></h1>
 			<ul>
 				<li>{todos.map(item => <p>{item.label}</p>)}</li>
 			</ul>
