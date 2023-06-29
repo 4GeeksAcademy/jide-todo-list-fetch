@@ -31,8 +31,12 @@ const Home = () => {
 	console.log(todos);
 	
 	return (
-		<div className="text-center">
-			{todos.map(item => <p>{item.label}</p>)}
+		<div className="container">
+			<h1><i><strong>My Todos </strong></i></h1>
+			<ul>
+				<li>{todos.map(item => <p>{item.label}</p>)}</li>
+			</ul>
+			
 
 		</div>
 	);
