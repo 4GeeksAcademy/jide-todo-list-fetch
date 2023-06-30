@@ -2,6 +2,11 @@ body {
     margin-top: 100px;
 }
 
+.container {
+    margin: auto;
+    width: 80%;
+}
+
 h1 {
     text-align: center;
     color: lightblue;
@@ -10,12 +15,12 @@ h1 {
 ul {
     padding: 0;
     margin-bottom: 0;
-    border-top: 1px solid lightblue;
     margin: auto;
     width: 50%;
 }
 
 ul li {
+    border-top: 1px solid lightblue;
     border-bottom: 1px solid lightblue;
     border-right: 1px solid lightblue;
     border-left: 1px solid lightblue;
@@ -23,11 +28,7 @@ ul li {
     padding: 5px; 
     border-radius: 2px;
     color: lightblue;
-}
-
-input {
-    border: none;
-    width: 100%;
+    border-radius: 5px;
 }
 
 li i {
@@ -38,12 +39,5 @@ li i {
  .tasks {
     margin: auto;
     width: 50%;
-}
-
-.tasks {
-    color: lightblue;
-}
-
-.update {
     color: lightblue;
 }
