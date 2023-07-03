@@ -17,7 +17,7 @@ const Home = () => {
 			return resp.json();
 		})
 		.then(data => {
-			setTodos(data);
+			setTodos(todos);
 		})
 		.catch(error => {
 			console.log(error);
@@ -101,8 +101,8 @@ const Home = () => {
 				</p>
 			</div>
 			<div className="container d-flex justify-content-around">
-				<div><button className="btn btn-outline-info" onClick={updateTodos}>Update Todos</button></div>
-				<div><button className="btn btn-outline-danger" onClick={deleteTodos}>Delete All Todos</button></div>
+				<div><button className="btn btn-outline-info" onClick={updateTodos}>Update Todo List</button></div>
+				<div><button className="btn btn-outline-danger" onClick={deleteTodos}>Delete All Tasks</button></div>
 			</div>
 		</div>
 	);
