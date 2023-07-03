@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 const Home = () => {
-
+	const [ inputValue, setInputValue ] = useState("");
 	const [todos, setTodos] = useState();
 	
 	const updateTodos = () => {
@@ -43,6 +43,17 @@ const Home = () => {
 		});
 	}
 
+	const addTodo = (e) => {
+		if (e.key === "Enter" && inputValue.trim() !== "") {
+		setTodos([...todos, { label: inputValue, done: false }]);
+		setInputValue("");
+		}
+	};
+
+	const deleteTodo = (id) => {
+		setTodos(todos.filter((task, index) => index !== id));
+	};
+
 	useEffect(() => {
 		fetch('https://assets.breatheco.de/apis/fake/todos/user/jide', {
 			method: "GET",
@@ -69,8 +80,17 @@ const Home = () => {
 	
 	return (
 		<div className="container">
-			<h1><i><strong>My Todos<i className="fa-solid fa-pencil"></i></strong></i></h1>
+			<h1><i><strong>My Todo List<i className="fa-solid fa-pencil"></i></strong></i></h1>
 			<ul>
+				<li>
+					<input 
+						type="text" 
+						value={inputValue} 
+						onChange={(e) => setInputValue(e.target.value)}
+						onKeyUp={addTodo}
+						placeholder="What needs to be done?"
+					/>
+				</li>
 				<li>
 					{todos.map(item => <p>{item.label} <i className="fa-solid fa-trash-can"></i></p>)}
 				</li>
