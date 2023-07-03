@@ -19,6 +19,12 @@ ul {
     width: 50%;
 }
 
+input {
+    border: none;
+    width: 100%;
+    font-style: italic;
+}
+
 ul li {
     border-top: 1px solid lightblue;
     border-bottom: 1px solid lightblue;
