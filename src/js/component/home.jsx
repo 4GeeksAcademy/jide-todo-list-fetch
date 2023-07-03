@@ -92,10 +92,14 @@ const Home = () => {
 					/>
 				</li>
 				<li>
-					{todos.map(item => <p>{item.label} <i className="fa-solid fa-trash-can"></i></p>)}
+					{todos.map((item, index) => <p>{item.label} <i className="fa-solid fa-trash-can" onClick={() =>deleteTodo(index)}></i></p>)}
 				</li>
 			</ul>
-			<div className="tasks"><p><i>{todos.length} tasks remaining</i></p></div>
+			<div className="tasks">
+				<p>
+					<i>{todos.length} tasks remaining</i>
+				</p>
+			</div>
 			<div className="container d-flex justify-content-around">
 				<div><button className="btn btn-outline-info" onClick={updateTodos}>Update Todos</button></div>
 				<div><button className="btn btn-outline-danger" onClick={deleteTodos}>Delete All Todos</button></div>
